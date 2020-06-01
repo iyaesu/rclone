@@ -4,6 +4,7 @@ on:
     push:
       branches:
         - master
+        - test
 
 jobs:
     build:
@@ -15,7 +16,7 @@ jobs:
             - name: Build and publish image
               uses: ilteoood/docker_buildx@master
               with:
-                tag: beta
+                tag: test-beta
                 imageName: rclone/rclone
                 platform: linux/amd64,linux/arm64,linux/ppc64le,linux/s390x,linux/386,linux/arm/v7
                 publish: true
