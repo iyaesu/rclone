@@ -5,6 +5,7 @@ WORKDIR /go/src/github.com/rclone/rclone/
 
 RUN \
   CGO_ENABLED=0 \
+  TAG="" \
   make
 RUN ./rclone version
 
