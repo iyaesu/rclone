@@ -3,6 +3,7 @@ FROM golang AS builder
 COPY . /go/src/github.com/rclone/rclone/
 WORKDIR /go/src/github.com/rclone/rclone/
 
+RUN env
 RUN \
   CGO_ENABLED=0 \
   TAG="" \
