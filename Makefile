@@ -44,6 +44,16 @@ endif
 .PHONY: rclone test_all vars version
 
 rclone:
+	@echo SHELL="'$(SHELL)'"
+	@echo BRANCH="'$(BRANCH)'"
+	@echo TAG="'$(TAG)'"
+	@echo VERSION="'$(VERSION)'"
+	@echo NEXT_VERSION="'$(NEXT_VERSION)'"
+	@echo GO_VERSION="'$(GO_VERSION)'"
+	@echo BETA_URL="'$(BETA_URL)'"
+	@echo =========================================
+	env
+	@echo =========================================
 	go build -v --ldflags "-s -X github.com/rclone/rclone/fs.Version=$(TAG)" $(BUILDTAGS)
 	mkdir -p `go env GOPATH`/bin/
 	cp -av rclone`go env GOEXE` `go env GOPATH`/bin/rclone`go env GOEXE`.new
